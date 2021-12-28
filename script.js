@@ -1,7 +1,7 @@
 // var game = prompt("Let's play Rock, Paper, Scissors!", "What's your move?");
-var moves = ["r", "p", "s"];
 var compChoice = Math.floor(Math.random() * 3) + 1;
 var userMove;
+var counter = 0;
 
 if (compChoice === 1) {
     compChoice = "r";
@@ -11,27 +11,6 @@ if (compChoice === 1) {
     compChoice = "s";
 }
 
-// var executeGame = function(user, computer) {
-//     if (user === "r") {
-//         if (computer ==="s") {
-//             return "User Wins!";
-//         } else {
-//             return "Computer Wins :/";
-//         }
-//     } else if (user === "p") {
-//         if (computer === "r") {
-//             return "User Wins!";
-//         } else {
-//             return "Computer Wins :/";
-//         }
-//     } else if (user === "s") {
-//         if (computer === "p") {
-//             return "User Wins!";
-//         } else {
-//             return "Computer Wins :/";
-//         }
-//     } 
-// }
 
 var executeGame = function(user, computer) {
 
@@ -63,7 +42,14 @@ document.getElementById("rockBtn").addEventListener("click", function() {
         compChoice = "s";
     }
     userMove = "r";
-    console.log(executeGame(userMove, compChoice));
+
+    if (executeGame(userMove, compChoice) == "User Wins!") {
+        counter ++;
+    }
+
+    document.getElementById("userWins").innerHTML = " " + counter;
+
+
 });
 document.getElementById("paperBtn").addEventListener("click", function() {
     var compChoice = Math.floor(Math.random() * 3) + 1;
@@ -91,52 +77,21 @@ document.getElementById("scissorsBtn").addEventListener("click", function() {
 });
 
 
+console.log(counter);
+
+// document.getElementById("userWins").innerHTML = " " + counter;
 
 
-// if (game !== "r" && game !== "p" && game !== "s") {
-//     alert("PLEASE INPUT THE RIGHT THING NIGGA");
-//     var game = prompt("Let's play Rock, Paper, Scissors!", "What's your move?");
+
+
+// Keep prompting for valid input
+
+// while (game !== "r" && game !== "p" && game !== "s" && game != null) {
+//    if ( game !== "r" && game !== "p" && game !== "s") {
+//        var game = prompt("Please enter valid input", "What's your move?");
+//    } 
 // }
 
 
-while (game !== "r" && game !== "p" && game !== "s" && game != null) {
-   if ( game !== "r" && game !== "p" && game !== "s") {
-       var game = prompt("Please enter valid input", "What's your move?");
-   } 
-}
-
-if (game === null) {
-    console.log("THEY CANCELLED UGH");
-}
-
-// var executeGame = function(user, computer) {
-//     if (user === "r") {
-//         if (computer ==="s") {
-//             return "User Wins!";
-//         } else {
-//             return "Computer Wins :/";
-//         }
-//     } else if (user === "p") {
-//         if (computer === "r") {
-//             return "User Wins!";
-//         } else {
-//             return "Computer Wins :/";
-//         }
-//     } else if (user === "s") {
-//         if (computer === "p") {
-//             return "User Wins!";
-//         } else {
-//             return "Computer Wins :/";
-//         }
-//     }
-// }
-
-// console.log(executeGame(game, compChoice));
-
-
-
-// function compMov() {
-//     return Math.floor(Math.random() * 3) +1;
-// }
 
 
