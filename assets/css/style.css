@@ -1,0 +1,29 @@
+body {
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+}
+
+#title {
+    padding-top: 50px;
+}
+
+#mainCont {
+    margin: auto;
+    background-color: rgb(207, 207, 207);
+    width: 50%;
+    min-width: 600px;
+    height: 700px;
+    border-radius: 80px;
+}
+
+#buttonCont {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    margin: 20px;
+    padding: 10px;
+    border-radius: 30px;
+}
